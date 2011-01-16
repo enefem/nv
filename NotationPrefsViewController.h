@@ -28,7 +28,7 @@
 }
 @end
 
-@interface NotationPrefsViewController : NSObject {
+@interface NotationPrefsViewController : NSObject <NSTableViewDelegate, NSTableViewDataSource> {
     IBOutlet NSTableView *allowedExtensionsTable;
     IBOutlet NSTableView *allowedTypesTable;
 	IBOutlet NSButton *enableEncryptionButton;

@@ -20,7 +20,7 @@
 
 #define DELAYED_LAYOUT 0
 
-@interface LinkingEditor : NSTextView
+@interface LinkingEditor : NSTextView <NSLayoutManagerDelegate>
 {
     IBOutlet NSTextField *controlField;
     IBOutlet NotesTableView *notesTableView;

@@ -79,7 +79,7 @@
 	DisableSecureEventInput();
 	
 	[passphraseField setStringValue:@""];
-	[self textDidChange:nil];
+	//[self textDidChange:nil];
 	
 	return result;
 }

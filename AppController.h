@@ -28,7 +28,7 @@
 @class TitlebarButton;
 @class LinearDividerShader;
 
-@interface AppController : NSObject {
+@interface AppController : NSObject <NSToolbarDelegate, NSTableViewDelegate, NSWindowDelegate, NSTextFieldDelegate, NSTextViewDelegate> {
     IBOutlet DualField *field;
 	IBOutlet RBSplitSubview *splitSubview;
 	IBOutlet RBSplitView *splitView;

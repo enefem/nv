@@ -82,7 +82,7 @@
 	
 	UInt32 len;
 	void *p = (void *)calloc(256, sizeof(char));
-	if (kcfindgenericpassword("NV", keychainAccountCString, 255, p, &len, NULL) != noErr) {
+    if (SecKeychainFindGenericPassword(NULL, 2, "NV", [keychainAccountString length], keychainAccountCString, &len, p, NULL) != noErr) {
 		free(p);
 		return NULL;
 	}

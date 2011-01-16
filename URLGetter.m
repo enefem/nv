@@ -117,7 +117,7 @@
 	
 	[tempDirectory autorelease];
 	tempDirectory = [[NSTemporaryDirectory() stringByAppendingPathComponent:[[NSProcessInfo processInfo] globallyUniqueString]] retain];
-	if (![[NSFileManager defaultManager] createDirectoryAtPath:tempDirectory attributes:nil]) {
+	if (![[NSFileManager defaultManager] createDirectoryAtPath:tempDirectory withIntermediateDirectories:FALSE attributes:nil error:nil]) {
 		NSLog(@"URLGetter: Couldn't create temporary directory!");
 		[download cancel];
 		NSBeep();
@@ -154,15 +154,15 @@
 	//clean up after ourselves
 	NSFileManager *fileMan = [NSFileManager defaultManager];
 	if (downloadPath) {
-		[fileMan removeFileAtPath:downloadPath handler:NULL];
+		[fileMan removeItemAtPath:downloadPath error:nil];
 		[downloadPath release];
 		downloadPath = nil;
 	}
 	
 	if (tempDirectory) {
 		//only remove temporary directory if there's nothing in it
-		if (![[fileMan directoryContentsAtPath:tempDirectory] count])
-			[fileMan removeFileAtPath:tempDirectory handler:NULL];
+		if (![[fileMan contentsOfDirectoryAtPath:tempDirectory error:nil] count])
+			[fileMan removeItemAtPath:tempDirectory error:NULL];
 		else
 			NSLog(@"note removing %@ because it still contains files!", tempDirectory);
 		[tempDirectory release];

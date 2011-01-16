@@ -17,7 +17,7 @@
 @class NotationPrefsViewController;
 @class GlobalPrefs;
 
-@interface PrefsWindowController : NSObject {
+@interface PrefsWindowController : NSObject <NSWindowDelegate, NSToolbarDelegate> {
     IBOutlet NSPopUpButton *folderLocationsMenuButton;
     IBOutlet NSTextField *bodyTextFontField;
     IBOutlet NSMatrix *tabKeyRadioMatrix;

@@ -44,7 +44,7 @@
 							NSLocalizedString(@"Please try again.",nil), NSLocalizedString(@"OK",nil), nil, nil);
 			[verifyChangedPasswordField setStringValue:@""];
 			[verifyChangedPasswordField performSelector:@selector(selectText:) withObject:nil afterDelay:0.0];
-			[self textDidChange:nil];
+			//[self textDidChange:nil];
 		}
 	} else {
 		

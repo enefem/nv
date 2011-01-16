@@ -24,7 +24,7 @@
 
 extern NSString *SyncSessionsChangedVisibleStatusNotification;
 
-@interface SyncSessionController : NSObject {
+@interface SyncSessionController : NSObject <NSMenuDelegate> {
 
 	NSMutableDictionary *syncServiceTimers;
 	NSMutableDictionary *syncServiceSessions;

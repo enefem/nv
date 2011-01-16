@@ -245,7 +245,7 @@ enum {VERIFY_NOT_ATTEMPTED, VERIFY_FAILED, VERIFY_IN_PROGRESS, VERIFY_SUCCESS};
     [notationPrefs addAllowedPathExtension:@""];
 	[allowedExtensionsTable reloadData];
 	
-	[allowedExtensionsTable selectRow:[notationPrefs pathExtensionsCount]-1 byExtendingSelection:NO];
+	[allowedExtensionsTable selectRowIndexes:[NSIndexSet indexSetWithIndex:[notationPrefs pathExtensionsCount]-1] byExtendingSelection:NO];
 	[allowedExtensionsTable editColumn:0 row:[notationPrefs pathExtensionsCount]-1 withEvent:nil select:YES];
 }
 
@@ -253,7 +253,7 @@ enum {VERIFY_NOT_ATTEMPTED, VERIFY_FAILED, VERIFY_IN_PROGRESS, VERIFY_SUCCESS};
     [notationPrefs addAllowedType:@""];
 	[allowedTypesTable reloadData];
 	
-	[allowedTypesTable selectRow:[notationPrefs typeStringsCount]-1 byExtendingSelection:NO];
+	[allowedTypesTable selectRowIndexes:[NSIndexSet indexSetWithIndex:[notationPrefs typeStringsCount]-1] byExtendingSelection:NO];
 	[allowedTypesTable editColumn:0 row:[notationPrefs typeStringsCount]-1 withEvent:nil select:YES];
 
 }

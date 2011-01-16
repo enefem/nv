@@ -220,7 +220,7 @@
 
 - (void)menuNeedsUpdate:(NSMenu *)menu {
 
-	if (!viewMenusValid && [menu delegate] == self) {
+	if (!viewMenusValid && [menu delegate] == (id) self) {
 		[menu setSubmenu:[self menuForColumnConfiguration:nil] forItem:[menu itemWithTag:97]];
 		[menu setSubmenu:[self menuForColumnSorting] forItem:[menu itemWithTag:98]];
 		viewMenusValid = YES;
